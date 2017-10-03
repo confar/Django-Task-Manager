@@ -1,5 +1,5 @@
 # Django-Task-Manager
-Task manager for group with filters, authorization and email notification updates written in database.
+Task manager for group of users with filters, authorization and email notification updates written in database.
 
 Written in Django 1.11 
 
