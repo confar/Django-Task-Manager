@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Add_comment{% endblock %}
+
+{% block content %}
+<h1>All Comments</h1>
+<hr> {%csrf_token%}
+<div class="task_comments">
+  {% for c in task.comment.all %}
+  <p>
+    <strong>{{ c.author.first_name }} {{ c.author.last_name }} </p>
+
+                  <p>{{ c.date|date:"F d Y P" }}</p>
+                  <p>wrote:</p>
+              </strong>
+    <p>{{ c.body|linebreaks }}</p>
+    <hr> {% empty %}
+    <p> No Comments </p>
+    {% endfor %}
+
+
+</div>
+<a href="{% url "task_edit" task_id=task_id %}">Go back to the task</a> {% endblock %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %} {% block title %}Add_comment{% endblock %} {% block content %}
+<h1>Add New Comment</h1>
+<form method='POST'>{%csrf_token%} {{form.as_p}}
+  <button type='submit'>Submit</button>
+  <p><a href="{% url "task_edit" task_id=task_id %}">Go back without submitting</a></p>
+
+  {% endblock %}
