@@ -3,7 +3,7 @@ from django.http import Http404, HttpResponseRedirect
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.contrib import messages
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.models import User
 import datetime
 
@@ -138,9 +138,7 @@ def comment(request, task_id):
 @login_required
 def see_comment(request, task_id):
     task = get_object_or_404(Task, pk=task_id)
-    template = 'see_comment.html'
-    context = {'task': task, 'task_id': task_id}
-    return render(request, template, context)
+    return TemplateResponse(request, 'see_comment.html', {'task': task, 'task_id': task_id})
 
 
 @login_required
