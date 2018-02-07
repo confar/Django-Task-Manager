@@ -171,8 +171,7 @@ def send_notify_mail(request, task):
 
 @login_required
 def check_if_any_task_is_overdue(request):
-    user = User.objects.get(id=request.user.id)
-    tasks = Task.objects.filter(assignee_id=user, completed=False)
+    tasks = Task.objects.filter(assignee_id=request.user.id, completed=False)
     if tasks:
         for task in tasks:
             if task.overdue_status:
