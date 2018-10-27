@@ -10,7 +10,7 @@ import datetime
 from website.taskmanager.forms import EditTaskForm, AddTaskForm, CommentForm
 from website.taskmanager.models import Task, Comment, Message
 
-
+#TODO rewrite all views to class-based
 @login_required
 def tasks_list(request):
     hide_completed = request.GET.get('hide_completed', False)
