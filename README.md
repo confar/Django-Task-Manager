@@ -1,4 +1,4 @@
-# Django-Task-Manager
+# Django Task Manager
 Task manager for group of users with filters, authorization and email notification updates written in database.
 
 python3
