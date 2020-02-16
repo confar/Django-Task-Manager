@@ -2,7 +2,7 @@
 Task manager for group of users with filters, authorization and email notification updates written in database.
 
 python3
-Written using Django 1.11 
+Written using Django 2.2
 
 
 in order to install 
